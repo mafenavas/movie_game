@@ -1,24 +1,11 @@
+import json
+
 # Define dictionary of movies and their information
-movies = {
-    "The Dark Knight": {
-        "year": 2008,
-        "genre": "Action",
-        "director": "Christopher Nolan",
-        "actors": ["Christian Bale", "Heath Ledger", "Aaron Eckhart"]
-    },
-    "Inception": {
-        "year": 2010,
-        "genre": "Sci-Fi",
-        "director": "Christopher Nolan",
-        "actors": ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Ellen Page"]
-    },
-    "Pulp Fiction": {
-        "year": 1994,
-        "genre": "Crime",
-        "director": "Quentin Tarantino",
-        "actors": ["John Travolta", "Samuel L. Jackson", "Uma Thurman"]
-    }
-}
+movies = None
+
+with open ('movie_game.json') as f:
+    movies = json.load(f)
+    print(movies)
 
 # 1. User Add a movie
 
@@ -35,11 +22,15 @@ movies[movie] = {
     'actors': actors
 }
 
+with open('movie_game.json', 'w') as f:
+    json.dump(movies, f)
+
 for movie in movies:
     print(f"Movie: {movie}")
     for key, value in movies[movie].items():
         print(f"{key}: {value}")
     print()
+
 
 # 2. User can edit any existing movie by updating its info
 
@@ -49,11 +40,17 @@ user_new_info = input('Type the new info: ')
 
 movies[edit_movie][edit_details] = user_new_info
 
+with open('movie_game.json', 'w') as f:
+    json.dump(movies, f)
+
 # 3. User can delete any movie
 
 deleted_movie = input('Please type the movie you want to delete: ')
 
 del movies[deleted_movie]
+
+with open('movie_game.json', 'w') as f:
+    json.dump(movies, f)
 
 
 for movie in movies:
@@ -71,7 +68,6 @@ for movie in movies:
     for key, value in movies[movie].items():
         if str(key) == search_type and str(value) == search_info:
             print(f"{movie}")
-        else:
-            print('We cannot find the movie you are looking for')
+
 
 
