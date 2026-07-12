@@ -1,1 +1,22 @@
-{"The Dark Knight 2": {"year": 2008, "genre": "Action", "director": "Christopher Nolan", "actors": ["Christian Bale", "Heath Ledger", "Aaron Eckhart"]}, "Inception": {"year": "2020", "genre": "Sci-Fi", "director": "Christopher Nolan", "actors": ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Ellen Page"]}}
+{
+    "The Dark Knight 2": {
+        "year": 2008,
+        "genre": "Action",
+        "director": "Christopher Nolan",
+        "actors": [
+            "Christian Bale",
+            "Heath Ledger",
+            "Aaron Eckhart"
+        ]
+    },
+    "Inception": {
+        "year": "2020",
+        "genre": "Sci-Fi",
+        "director": "Christopher Nolan",
+        "actors": [
+            "Leonardo DiCaprio",
+            "Joseph Gordon-Levitt",
+            "Ellen Page"
+        ]
+    }
+}
