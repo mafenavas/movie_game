@@ -26,9 +26,13 @@ while True:
         while True:
             try: 
                 year = int(input('Add the year the movie was released '))
-                break
+                if year >= 1900 and year <= 2026:
+                    break
+                else:
+                    print('The year must be a number between 1900 - 2026!')
             except:
-                print('The year must be a number!')
+                print('Invalid type of data, please type a number')
+
         genre = str(input('Type the genre of the movie '))
         director = str(input('Who is the director of the movie '))
         actors = str(input('List three actors from the movie '))
@@ -51,9 +55,25 @@ while True:
 
     elif user_choice == '2':
         edit_movie = input('Please type the movie do you want to update: ')
-        edit_details = input('Please type what kind of info do you want to update: ')
-        user_new_info = input('Type the new info: ')
-        
+        edit_details = input('Please type the detail related to the movie you want to update: ' \
+        '\n1. Year' \
+        '\n2. Genre' \
+        '\n3. Director' \
+        '\n4. Actors: ')
+
+        if edit_details == 'year':
+            while True:
+                try: 
+                    user_new_info = int(input('Type the new info: '))
+                    if user_new_info >= 1900 and user_new_info <= 2026:
+                        break
+                    else:
+                        print('The year must be a number between 1900 - 2026!')
+                except:
+                    print('The year must be a number between 1900 - 2026!')
+        else:
+            user_new_info = str(input('Type the new info: '))
+      
         try:
             movies[edit_movie][edit_details] = user_new_info
         except:
